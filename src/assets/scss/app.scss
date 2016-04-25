@@ -1,0 +1,297 @@
+@charset 'utf-8';
+@import 'font';
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-global-styles;
+//@include foundation-grid;
+@include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+// @include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-flex-video;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+// @include foundation-progress-element;
+// @include foundation-meter-element;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+//@include foundation-float-classes;
+@include foundation-flex-classes;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+// get set styles begin
+// ---------------------
+img {
+    -ms-interpolation-mode: bicubic;
+    max-width: 100%;
+    height: auto
+}
+body {
+  -webkit-text-size-adjust: 100%;
+}
+.page-container, .innerpage-container {
+    overflow: hidden;
+  @include breakpoint(medium up) {
+    border: 1rem solid map-get($foundation-palette, secondary);   
+  }
+}
+.page-bottom {
+  padding: 3rem 0;
+  @include breakpoint(small) {
+    padding: 2rem 0.5rem;
+  }
+}
+.page-container {
+  .page-bottom {
+      background-color: map-get($foundation-palette, primary);
+      border-top: 1rem solid map-get($foundation-palette, secondary);
+  }
+}
+
+.innerpage-container {
+  @include breakpoint(medium up) {
+    border: 0.5rem solid map-get($foundation-palette, primary);   
+  }
+  .page-bottom {
+      background-color: $white;
+      border-top: 0.5rem solid map-get($foundation-palette, primary);
+    h2 {
+      border: 0.6rem solid map-get($foundation-palette, accent);
+      margin-left: -1rem;
+      padding: 0.5rem;
+      @include grid-col-size(10);
+      background: url('/assets/img/apostrophe.png') no-repeat left top;
+      text-transform: uppercase;
+      small {
+        color: map-get($foundation-palette, tertiary);
+      }
+    }
+    h2, h3, h4 {
+      color: map-get($foundation-palette, primary);
+    }
+    p.lead {
+      color: map-get($foundation-palette, accent);
+      font-style: italic;
+    }
+    .clearfix {
+      @include flex;
+    }
+ }
+}
+
+.page-header, .innerpage-header {
+  background-color: transparent; 
+  background-size: cover; 
+  background-position: top center; 
+  background-repeat: no-repeat; 
+  background-image: url('http://s169923.gridserver.com/images/docksteps.jpg');
+  padding: 3rem 0;
+}
+.page-header__logo {
+  margin: 0 0 7%;
+  text-align: center;
+
+  img {
+    display: block;
+    width: 300px;
+    margin: 0 auto 18px;
+  }
+  .tagline {
+    font-size: 1.5 rem;
+    text-transform: uppercase;
+    color: map-get($foundation-palette, secondary);
+  }
+  h1 {
+    text-transform: uppercase;
+    color: map-get($foundation-palette, secondary);
+  }
+  .navigation {
+    @include flex;
+    @include flex-align(center, stretch);
+    margin: 3rem 0;
+    a.button {
+      @include flex-align-self(middle);
+      color: map-get($foundation-palette, primary);
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      letter-spacing: 2;
+    }
+  }
+}
+.innerpage-header {
+  background-image: url('https://images.unsplash.com/photo-1451417379553-15d8e8f49cde');
+  @include flex;
+  @include flex-align(left, stretch);
+
+  .innerpage-header__logo  {
+    @include flex-align-self(top);
+    img {
+      width: 100px;
+      margin: 0 0 0 1rem;
+    }
+
+
+  }
+  .innerpage-header__title {
+    @include flex-align-self(top);
+    background: rgba(0,0,0,0.65);
+    margin-left: 1rem;
+    padding: 0 0.5rem 0 0.5rem;
+
+    h1 {
+      text-transform: uppercase;
+      color: map-get($foundation-palette, accent);
+    }
+    .tagline {
+      font-size: 1.2rem;
+      line-height: 1;
+      color: map-get($foundation-palette, secondary);;
+    }
+  }
+
+}
+
+
+.page-footer {
+  color: map-get($foundation-palette, tertiary);
+  text-align: center;
+  background-color: map-get($foundation-palette, primary);
+  padding-top: 1rem;
+  a {
+    color: map-get($foundation-palette, secondary);
+  }
+}
+
+
+.instagram-promo {
+
+    text-align: center
+}
+
+.instagram-promo .icon {
+    width: 22px;
+    height: 22px;
+    fill: #fff;
+    display: block;
+    margin: 0 auto 18px
+}
+
+.instagram-promo h3 {
+    font-size: 22px;
+    line-height: 30px;
+    color: map-get($foundation-palette, secondary);
+    font-weight: 300
+}
+
+.instagram-promo h3 a {
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #fff
+}
+
+.instagram-promo__images {
+    margin: 42px 0 60px
+}
+
+.instagram-promo__images-list {
+    max-width: 1224px;
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity .3s
+}
+
+.instagram-promo__images-list.state-loaded {
+    opacity: 1
+}
+
+.instagram-promo__images-list li {
+    display: block;
+    float: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+    position: relative;
+    background: #fff
+}
+
+.instagram-promo__images-list a {
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    position: relative;
+    background: #fff;
+    transition: opacity .2s
+}
+
+.instagram-promo__images-list a:hover {
+    opacity: .7
+}
+
+.instagram-promo__images-list img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.instafeedrow {
+  @include flex-grid-row;
+  margin-top: 2rem;
+  .column img {
+    border: 4px solid map-get($foundation-palette, secondary);
+    margin: 0 2.4509804% 10%;
+
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  p {
+    text-align: left;
+    font-size: 0.8rem;
+    line-height: 1.1;
+    &.caption {
+    margin: 0 0 2rem 0.5rem;
+
+      color: map-get($foundation-palette, tertiary); 
+    }
+    &.likes {
+    margin: -0.5rem 0 0 0.5rem;
+
+      color: map-get($foundation-palette, accent);
+    }
+  }
+
+}
